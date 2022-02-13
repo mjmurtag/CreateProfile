@@ -34,7 +34,7 @@ class SignUpViewModel(private val userRepository: UserRepository) : ViewModel() 
      */
     fun signUp(email: String, password: String) {
         userRepository.signUp(email, password)
-        //_navigateTo.value = Event(Screen.Confirmation)
+        // _navigateTo.value = Event(Screen.Confirmation)
     }
 }
 
