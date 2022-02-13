@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.compose.createprofile.signinsignup
+package com.example.compose.createprofile.signup
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -63,7 +63,7 @@ import androidx.compose.ui.unit.dp
 import com.example.compose.createprofile.R
 
 @Composable
-fun SignInSignUpScreen(
+fun SignUpScreen(
     modifier: Modifier = Modifier,
     content: @Composable() () -> Unit
 ) {
@@ -83,7 +83,7 @@ fun SignInSignUpScreen(
 }
 
 @Composable
-fun SignInSignUpTopAppBar(topAppBarText: String) {
+fun SignUpTopAppBar(topAppBarText: String) {
     TopAppBar(
         title = {
             Text(
@@ -222,8 +222,8 @@ fun TextFieldError(textError: String) {
 
 @Preview
 @Composable
-fun SignInSignUpScreenPreview() {
-    SignInSignUpScreen(
+fun SignUpScreenPreview() {
+    SignUpScreen(
         content = {}
     )
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.compose.createprofile.signinsignup
+package com.example.compose.createprofile.signup
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -51,12 +51,12 @@ sealed class SignUpEvent {
 fun SignUp(onNavigationEvent: (SignUpEvent) -> Unit) {
     Scaffold(
         topBar = {
-            SignInSignUpTopAppBar(
+            SignUpTopAppBar(
                 topAppBarText = stringResource(id = R.string.title),
             )
         },
         content = {
-            SignInSignUpScreen(
+            SignUpScreen(
                 modifier = Modifier.supportWideScreen()
             ) {
                 Column {

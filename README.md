@@ -16,7 +16,7 @@ Package [`com.example.compose.createprofile`]
 
 ### Sign up
 
-Package [`com.example.compose.createprofile.signinsignup`][5]
+Package [`com.example.compose.createprofile.signup`][5]
 
 This package contains 2 screens:
 * Sign up

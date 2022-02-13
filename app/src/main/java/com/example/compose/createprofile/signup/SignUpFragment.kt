@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.compose.createprofile.signinsignup
+package com.example.compose.createprofile.signup
 
 import android.os.Bundle
 import android.view.LayoutInflater
