@@ -19,8 +19,10 @@
     <string name="app_tagline">Create Profile with Jetpack Compose</string>
     <string name="title">Profile Creation</string>
     <string name="email">Email</string>
+    <string name="first_name">First Name</string>
     <string name="password">Password</string>
     <string name="confirm_password">Confirm password</string>
+    <string name="website">Website</string>
     <string name="create_account">Submit</string>
     <string name="instructions">Use the form below to submit your portfolio. An email and password are required</string>
     <string name="feature_not_available">Feature not available</string>

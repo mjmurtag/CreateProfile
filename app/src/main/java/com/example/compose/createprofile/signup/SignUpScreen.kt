@@ -41,10 +41,7 @@ import com.example.compose.createprofile.theme.CreateProfileTheme
 import com.example.compose.createprofile.util.supportWideScreen
 
 sealed class SignUpEvent {
-    object SignIn : SignUpEvent()
     data class SignUp(val email: String, val password: String) : SignUpEvent()
-    object SignInAsGuest : SignUpEvent()
-    object NavigateBack : SignUpEvent()
 }
 
 @Composable
@@ -78,6 +75,9 @@ fun SignUpContent(
     Column(modifier = Modifier.fillMaxWidth()) {
         val passwordFocusRequest = remember { FocusRequester() }
         val confirmationPasswordFocusRequest = remember { FocusRequester() }
+        val firstNameState = remember {
+            TextFieldState()
+        }
         val emailState = remember { EmailState() }
         CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.medium) {
             Text(
@@ -85,9 +85,12 @@ fun SignUpContent(
                 style = MaterialTheme.typography.caption
             )
         }
-        Email(emailState, onImeAction = { passwordFocusRequest.requestFocus() })
-
+        FirstName(firstNameState, onImeAction = { passwordFocusRequest.requestFocus() })
         Spacer(modifier = Modifier.height(16.dp))
+
+        Email(emailState, onImeAction = { passwordFocusRequest.requestFocus() })
+        Spacer(modifier = Modifier.height(16.dp))
+
         val passwordState = remember { PasswordState() }
         Password(
             label = stringResource(id = R.string.password),
@@ -102,8 +105,16 @@ fun SignUpContent(
         Password(
             label = stringResource(id = R.string.confirm_password),
             passwordState = confirmPasswordState,
-            onImeAction = { onSignUpSubmitted(emailState.text, passwordState.text) },
+            imeAction = ImeAction.Next,
             modifier = Modifier.focusRequester(confirmationPasswordFocusRequest)
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+        val websiteState = remember { WebsiteState() }
+        Website(
+            websiteState = websiteState,
+            imeAction = ImeAction.Next,
+            onImeAction = { onSignUpSubmitted(emailState.text, passwordState.text) },
         )
 
         Spacer(modifier = Modifier.height(16.dp))

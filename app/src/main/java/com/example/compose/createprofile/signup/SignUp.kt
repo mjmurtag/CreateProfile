@@ -135,6 +135,84 @@ fun Email(
 }
 
 @Composable
+fun FirstName(
+    firstNameState: TextFieldState = remember { TextFieldState() },
+    imeAction: ImeAction = ImeAction.Next,
+    onImeAction: () -> Unit = {}
+) {
+    OutlinedTextField(
+        value = firstNameState.text,
+        onValueChange = {
+            firstNameState.text = it
+        },
+        label = {
+            CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.medium) {
+                Text(
+                    text = stringResource(id = R.string.first_name),
+                    style = MaterialTheme.typography.body2
+                )
+            }
+        },
+        modifier = Modifier
+            .fillMaxWidth()
+            .onFocusChanged { focusState ->
+                firstNameState.onFocusChange(focusState.isFocused)
+                if (!focusState.isFocused) {
+                    firstNameState.enableShowErrors()
+                }
+            },
+        textStyle = MaterialTheme.typography.body2,
+        isError = firstNameState.showErrors(),
+        keyboardOptions = KeyboardOptions.Default.copy(imeAction = imeAction),
+        keyboardActions = KeyboardActions(
+            onDone = {
+                onImeAction()
+            }
+        )
+    )
+    firstNameState.getError()?.let { error -> TextFieldError(textError = error) }
+}
+
+@Composable
+fun Website(
+    websiteState: TextFieldState,
+    imeAction: ImeAction = ImeAction.Done,
+    onImeAction: () -> Unit = {}
+) {
+    OutlinedTextField(
+        value = websiteState.text,
+        onValueChange = {
+            websiteState.text = it
+        },
+        label = {
+            CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.medium) {
+                Text(
+                    text = stringResource(id = R.string.website),
+                    style = MaterialTheme.typography.body2
+                )
+            }
+        },
+        modifier = Modifier
+            .fillMaxWidth()
+            .onFocusChanged { focusState ->
+                websiteState.onFocusChange(focusState.isFocused)
+                if (!focusState.isFocused) {
+                    websiteState.enableShowErrors()
+                }
+            },
+        textStyle = MaterialTheme.typography.body2,
+        isError = websiteState.showErrors(),
+        keyboardOptions = KeyboardOptions.Default.copy(imeAction = imeAction),
+        keyboardActions = KeyboardActions(
+            onDone = {
+                onImeAction()
+            }
+        )
+    )
+    websiteState.getError()?.let { error -> TextFieldError(textError = error) }
+}
+
+@Composable
 fun Password(
     label: String,
     passwordState: TextFieldState,
