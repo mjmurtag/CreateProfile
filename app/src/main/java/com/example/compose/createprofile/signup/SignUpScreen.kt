@@ -36,30 +36,31 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.compose.createprofile.R
 import com.example.compose.createprofile.theme.CreateProfileTheme
 import com.example.compose.createprofile.util.supportWideScreen
 
 sealed class SignUpEvent {
-    data class SignUp(val email: String, val password: String) : SignUpEvent()
+    data class SignUp(
+        val firstName: String,
+        val email: String,
+        val password: String,
+        val website: String
+    ) : SignUpEvent()
 }
 
 @Composable
 fun SignUp(onNavigationEvent: (SignUpEvent) -> Unit) {
     Scaffold(
-        topBar = {
-            SignUpTopAppBar(
-                topAppBarText = stringResource(id = R.string.title),
-            )
-        },
         content = {
             SignUpScreen(
                 modifier = Modifier.supportWideScreen()
             ) {
                 Column {
                     SignUpContent(
-                        onSignUpSubmitted = { email, password ->
-                            onNavigationEvent(SignUpEvent.SignUp(email, password))
+                        onSignUpSubmitted = { name, email, password, website ->
+                            onNavigationEvent(SignUpEvent.SignUp(name, email, password, website))
                         }
                     )
                 }
@@ -70,7 +71,7 @@ fun SignUp(onNavigationEvent: (SignUpEvent) -> Unit) {
 
 @Composable
 fun SignUpContent(
-    onSignUpSubmitted: (email: String, password: String) -> Unit,
+    onSignUpSubmitted: (name: String, email: String, password: String, website: String) -> Unit,
 ) {
     Column(modifier = Modifier.fillMaxWidth()) {
         val passwordFocusRequest = remember { FocusRequester() }
@@ -79,12 +80,16 @@ fun SignUpContent(
             TextFieldState()
         }
         val emailState = remember { EmailState() }
+        Title(title = R.string.title)
+        Spacer(modifier = Modifier.height(16.dp))
         CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.medium) {
             Text(
                 text = stringResource(id = R.string.instructions),
-                style = MaterialTheme.typography.caption
+                style = MaterialTheme.typography.caption,
+                fontSize = 15.sp
             )
         }
+        Spacer(modifier = Modifier.height(16.dp))
         FirstName(firstNameState, onImeAction = { passwordFocusRequest.requestFocus() })
         Spacer(modifier = Modifier.height(16.dp))
 
@@ -114,15 +119,20 @@ fun SignUpContent(
         Website(
             websiteState = websiteState,
             imeAction = ImeAction.Next,
-            onImeAction = { onSignUpSubmitted(emailState.text, passwordState.text) },
         )
 
         Spacer(modifier = Modifier.height(16.dp))
         Button(
-            onClick = { onSignUpSubmitted(emailState.text, passwordState.text) },
+            onClick = {
+                onSignUpSubmitted(
+                    firstNameState.text,
+                    emailState.text, passwordState.text, websiteState.text
+                )
+            },
             modifier = Modifier.fillMaxWidth(),
             enabled = emailState.isValid &&
-                passwordState.isValid && confirmPasswordState.isValid
+                passwordState.isValid && confirmPasswordState.isValid &&
+                firstNameState.isValid && websiteState.isValid
         ) {
             Text(text = stringResource(id = R.string.create_account))
         }
