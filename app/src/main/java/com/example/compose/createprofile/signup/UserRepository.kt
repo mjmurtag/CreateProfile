@@ -36,7 +36,7 @@ object UserRepository {
         get() = _user
 
     @Suppress("UNUSED_PARAMETER")
-    fun signUp(email: String, password: String) {
+    fun signUp(name: String, email: String, password: String, website: String) {
         _user = User.LoggedInUser(email)
     }
 }
