@@ -42,7 +42,12 @@ import com.example.compose.createprofile.theme.CreateProfileTheme
 import com.example.compose.createprofile.util.supportWideScreen
 
 sealed class SignUpEvent {
-    data class SignUp(val firstName: String, val email: String, val password: String, val website: String) : SignUpEvent()
+    data class SignUp(
+        val firstName: String,
+        val email: String,
+        val password: String,
+        val website: String
+    ) : SignUpEvent()
 }
 
 @Composable
@@ -118,11 +123,16 @@ fun SignUpContent(
 
         Spacer(modifier = Modifier.height(16.dp))
         Button(
-            onClick = { onSignUpSubmitted(firstNameState.text, emailState.text, passwordState.text, websiteState.text) },
+            onClick = {
+                onSignUpSubmitted(
+                    firstNameState.text,
+                    emailState.text, passwordState.text, websiteState.text
+                )
+            },
             modifier = Modifier.fillMaxWidth(),
             enabled = emailState.isValid &&
                 passwordState.isValid && confirmPasswordState.isValid &&
-                    firstNameState.isValid && websiteState.isValid
+                firstNameState.isValid && websiteState.isValid
         ) {
             Text(text = stringResource(id = R.string.create_account))
         }
