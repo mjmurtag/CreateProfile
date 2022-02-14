@@ -18,7 +18,9 @@ package com.example.compose.createprofile.signup
 
 import java.util.regex.Pattern
 
-private const val WEBSITE_VALIDATION_REGEX = "^((https?|ftp|smtp):\\/\\/)?(www.)?[a-z0-9]+\\.[a-z]+(\\/[a-zA-Z0-9#]+\\/?)*\$"
+private const val WEBSITE_VALIDATION_REGEX =
+    "^((https?|ftp|smtp):\\/\\/)?(www.)?[a-z0-9]+\\.[a-z]+(\\/[a-zA-Z0-9#]+\\/?)*\$"
+
 class WebsiteState :
     TextFieldState(validator = ::isWebsiteValid, errorFor = ::websiteValidationError)
 
