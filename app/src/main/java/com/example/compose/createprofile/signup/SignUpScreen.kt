@@ -36,6 +36,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.compose.createprofile.R
 import com.example.compose.createprofile.theme.CreateProfileTheme
 import com.example.compose.createprofile.util.supportWideScreen
@@ -47,11 +48,6 @@ sealed class SignUpEvent {
 @Composable
 fun SignUp(onNavigationEvent: (SignUpEvent) -> Unit) {
     Scaffold(
-        topBar = {
-            SignUpTopAppBar(
-                topAppBarText = stringResource(id = R.string.title),
-            )
-        },
         content = {
             SignUpScreen(
                 modifier = Modifier.supportWideScreen()
@@ -79,12 +75,16 @@ fun SignUpContent(
             TextFieldState()
         }
         val emailState = remember { EmailState() }
+        Title(title = R.string.title)
+        Spacer(modifier = Modifier.height(16.dp))
         CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.medium) {
             Text(
                 text = stringResource(id = R.string.instructions),
-                style = MaterialTheme.typography.caption
+                style = MaterialTheme.typography.caption,
+                fontSize = 15.sp
             )
         }
+        Spacer(modifier = Modifier.height(16.dp))
         FirstName(firstNameState, onImeAction = { passwordFocusRequest.requestFocus() })
         Spacer(modifier = Modifier.height(16.dp))
 
