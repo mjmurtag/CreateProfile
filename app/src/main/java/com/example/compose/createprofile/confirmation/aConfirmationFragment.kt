@@ -26,7 +26,6 @@ import androidx.fragment.app.viewModels
 import com.example.compose.createprofile.R
 import com.example.compose.createprofile.Screen
 import com.example.compose.createprofile.navigate
-import com.example.compose.createprofile.signup.SignUpEvent
 import com.example.compose.createprofile.signup.SignUpViewModel
 import com.example.compose.createprofile.signup.SignUpViewModelFactory
 import com.example.compose.createprofile.theme.CreateProfileTheme
@@ -59,16 +58,7 @@ class ConfirmationFragment : Fragment() {
             )
             setContent {
                 CreateProfileTheme {
-                    Confirm(
-                        onNavigationEvent = { event ->
-                            when (event) {
-                                is SignUpEvent.SignUp -> {
-                                    viewModel.signUp(event.firstName,
-                                        event.email, event.password, event.website)
-                                }
-                            }
-                        }
-                    )
+                    Confirm()
                 }
             }
         }

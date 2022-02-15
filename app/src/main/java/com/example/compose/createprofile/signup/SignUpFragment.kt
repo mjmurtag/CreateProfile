@@ -60,7 +60,10 @@ class SignUpFragment : Fragment() {
                         onNavigationEvent = { event ->
                             when (event) {
                                 is SignUpEvent.SignUp -> {
-                                    viewModel.signUp(event.email, event.password)
+                                    viewModel.signUp(
+                                        event.firstName, event.email,
+                                        event.password, event.website
+                                    )
                                 }
                             }
                         }
