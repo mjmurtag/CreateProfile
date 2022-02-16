@@ -31,6 +31,7 @@
 * Secret toggles used for password fields
 * Secondary Color Accents which help the app 'feel' native to the OS
 * Used Material default font to maintain OS consistency 
+* Dark mode support
 
 ## TODO
 * Unit test each class in isolation
