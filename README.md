@@ -3,7 +3,7 @@
 
 > Note: `Spotless Kotlin` is enforced via Github Actions on this repo
 >
-> Automatically resolve linting erros by running 
+> Automatically resolve lint errors by running 
 >
 > `./gradlew spotlessapply`
 
