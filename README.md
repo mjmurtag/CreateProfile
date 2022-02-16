@@ -73,9 +73,9 @@ Screenshots
     <img src="/screenshots/confirmation_dark.png" width="250" height="500" />
 </p>
 
-## Setup
+### Built From Template
 [Click here](https://github.com/android/compose-samples/) for instructions on how to
-setup this and other compose samples. 
+setup compose samples. 
 
 ## License
 
