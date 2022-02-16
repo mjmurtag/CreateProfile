@@ -11,16 +11,22 @@
 
 * Jetpack Compose
 * Jetpack Navigation
+* `Viewmodel` class allows user data to survive configuration changes like screen rotation
 * Conforms to Material Design UX
 * Primary colors have adequate contrast for low-vision users
 
 ## Showcase Skills
 * Spotless kotlin enforcement on PRs into main
 * Github action `gradlew build` enforced on PRs into main
+* Utilization of modern Jetpack Android libraries yielded a UI that is
+    * Responsive
+    * Accessible 
+    * Extensible 
+    * Testable via automation
 
 ## Deviations From Assigned Task
+* Form validation for each data type : `Email`, `Password`, `Website`
 * Secret toggles used for password fields
-* Form validation present results in 'off spec' button color changes
 * Secondary Color Accents which help the app 'feel' native to the OS
 * Used Material default font to maintain OS consistency 
 
