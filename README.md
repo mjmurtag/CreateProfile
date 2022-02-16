@@ -7,27 +7,23 @@
 >
 > `./gradlew spotlessapply`
 
-Screenshots
------------
-<p float="left">
-<img src="./screenshots/profile_create_light.png" width="250" height="500" />
-<img src="/screenshots/profile_create_dark.png" width="250" height="500" />
-<img src="./screenshots/profile_create_filled_light" width="250" height="500" />
-<img src="~/screenshots/dark_signin" width="250" height="500" />
-</p>
+## Overview
 
-## Features
+* Jetpack Compose
+* Jetpack Navigation
+* Conforms to Material Design UX
+* Primary colors have adequate contrast for low-vision users
 
-
+## Deviations From Assigned Task
+* Secret toggles used for password fields
+* Form validation present results in 'off spec' button color changes
+* Secondary Color Accents which help the app 'feel' native to the OS
+* Spotless kotlin enforcement on PRs into main
+* Github action `gradlew build` enforced on PRs into main
 
 ### App scaffolding
 
 Package [`com.example.compose.createprofile`]
-
-
-### Sign up
-
-Package [`com.example.compose.createprofile.signup`][5]
 
 This package contains 2 screens:
 * Sign up
@@ -36,6 +32,29 @@ This package contains 2 screens:
 ### Data
 
 The data in the sample is static, held in the `*Repository` classes.
+
+Screenshots
+-----------
+## Light Mode
+<p float="left">
+    <img src="/screenshots/profile_create_light.png" width="250" height="500" />
+    <img src="/screenshots/profile_create_light_filled.png" width="250" height="500" />
+    <img src="/screenshots/confirmation_light.png" width="250" height="500" />    
+</p>
+
+## Form Validation and Secret Toggle
+<p float="top">
+    <img src="/screenshots/functional_security.png" width="250" height="100" />
+    <img src="/screenshots/Invalid_Form.png" width="300" height="550" />
+</p>
+
+## Dark Mode
+
+<p float="left">
+    <img src="/screenshots/profile_create_dark.png" width="250" height="500" />
+    <img src="/screenshots/profile_create_dark_filled.png" width="250" height="500" />
+    <img src="/screenshots/confirmation_dark.png" width="250" height="500" />
+</p>
 
 ## Setup
 [Click here](https://github.com/android/compose-samples/) for instructions on how to
