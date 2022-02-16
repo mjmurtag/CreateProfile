@@ -8,10 +8,11 @@
 > `./gradlew spotlessapply`
 
 ## Overview
-
+* Single Activity Architecture 
 * Jetpack Compose
 * Jetpack Navigation
 * `Viewmodel` class allows user data to survive configuration changes like screen rotation
+   * Enforces **Seperation of Concerns**
 * Conforms to Material Design UX
 * Primary colors have adequate contrast for low-vision users
 
@@ -30,6 +31,11 @@
 * Secret toggles used for password fields
 * Secondary Color Accents which help the app 'feel' native to the OS
 * Used Material default font to maintain OS consistency 
+
+## TODO
+* Unit test each class in isolation
+* Add e2e integration tests to the PR Github Action
+* Add dependency injection with `Hilt` or `Dagger`
 
 ### App scaffolding
 
