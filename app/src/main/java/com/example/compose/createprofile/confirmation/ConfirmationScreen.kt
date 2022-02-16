@@ -79,8 +79,11 @@ fun Confirm() {
                         modifier = Modifier.supportWideScreen()
                     ) {
                         Column {
-                            Text(text = stringResource(id = R.string.hello) + " " +
-                                    user.name + "!", fontSize = 35.sp)
+                            Text(
+                                text = stringResource(id = R.string.hello) + " " +
+                                    user.name + "!",
+                                fontSize = 35.sp
+                            )
                             Spacer(modifier = Modifier.height(16.dp))
                             Text(text = stringResource(id = R.string.confirmation))
                             Spacer(modifier = Modifier.height(16.dp))
@@ -89,14 +92,18 @@ fun Confirm() {
                                 verticalArrangement = Arrangement.Center,
                                 horizontalAlignment = Alignment.CenterHorizontally
                             ) {
-                                Text(text = buildAnnotatedString {
-                                    append(
-                                        AnnotatedString(
-                                            text = user.website, spanStyle =
-                                            SpanStyle(Color.Blue)
+                                Text(
+                                    text = buildAnnotatedString {
+                                        append(
+                                            AnnotatedString(
+                                                text = user.website,
+                                                spanStyle =
+                                                SpanStyle(Color.Blue)
+                                            )
                                         )
-                                    )
-                                }, textAlign = TextAlign.Center)
+                                    },
+                                    textAlign = TextAlign.Center
+                                )
                                 Spacer(modifier = Modifier.height(16.dp))
                                 Text(text = user.name, textAlign = TextAlign.Center)
                                 Spacer(modifier = Modifier.height(16.dp))

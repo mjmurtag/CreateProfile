@@ -99,7 +99,6 @@ fun SignUpContent(
         Email(emailState, onImeAction = { passwordFocusRequest.requestFocus() })
         Spacer(modifier = Modifier.height(16.dp))
 
-
         Password(
             label = stringResource(id = R.string.password),
             passwordState = passwordState,
