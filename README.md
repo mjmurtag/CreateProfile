@@ -8,9 +8,9 @@
 > `./gradlew spotlessapply`
 
 ## Overview
-* Single Activity Architecture 
-* Jetpack Compose
-* Jetpack Navigation
+* Single Activity Architecture - Avoids placing data in `Application Scope`
+* Jetpack Compose - Makes building apps faster and easier with **less code**
+* Jetpack Navigation - No need to handle your own fragment transactions 
 * `Viewmodel` class allows user data to survive configuration changes like screen rotation
    * Enforces **Seperation of Concerns**
 * Conforms to Material Design UX
