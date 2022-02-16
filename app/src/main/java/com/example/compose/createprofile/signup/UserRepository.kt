@@ -20,7 +20,12 @@ import androidx.compose.runtime.Immutable
 
 sealed class User {
     @Immutable
-    data class LoggedInUser(val email: String) : User()
+    data class LoggedInUser(
+        val name: String,
+        val email: String,
+        val password: String,
+        val website: String
+    ) : User()
     object NoUserLoggedIn : User()
 }
 
@@ -34,9 +39,8 @@ object UserRepository {
     private var _user: User = User.NoUserLoggedIn
     val user: User
         get() = _user
-
     @Suppress("UNUSED_PARAMETER")
-    fun signUp(email: String, password: String) {
-        _user = User.LoggedInUser(email)
+    fun signUp(name: String, email: String, password: String, website: String) {
+        _user = User.LoggedInUser(name, email, password, website)
     }
 }

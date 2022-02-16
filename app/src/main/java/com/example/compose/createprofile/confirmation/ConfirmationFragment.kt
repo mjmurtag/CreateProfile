@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.compose.createprofile.signup
+package com.example.compose.createprofile.confirmation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -26,12 +26,14 @@ import androidx.fragment.app.viewModels
 import com.example.compose.createprofile.R
 import com.example.compose.createprofile.Screen
 import com.example.compose.createprofile.navigate
+import com.example.compose.createprofile.signup.SignUpViewModel
+import com.example.compose.createprofile.signup.SignUpViewModelFactory
 import com.example.compose.createprofile.theme.CreateProfileTheme
 
 /**
  * Fragment containing the sign up UI
  */
-class SignUpFragment : Fragment() {
+class ConfirmationFragment : Fragment() {
 
     private val viewModel: SignUpViewModel by viewModels { SignUpViewModelFactory() }
 
@@ -56,18 +58,7 @@ class SignUpFragment : Fragment() {
             )
             setContent {
                 CreateProfileTheme {
-                    SignUp(
-                        onNavigationEvent = { event ->
-                            when (event) {
-                                is SignUpEvent.SignUp -> {
-                                    viewModel.signUp(
-                                        event.firstName, event.email,
-                                        event.password, event.website
-                                    )
-                                }
-                            }
-                        }
-                    )
+                    Confirm()
                 }
             }
         }

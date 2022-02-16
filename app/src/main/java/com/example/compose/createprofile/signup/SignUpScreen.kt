@@ -80,6 +80,9 @@ fun SignUpContent(
             TextFieldState()
         }
         val emailState = remember { EmailState() }
+        val passwordState = remember { PasswordState() }
+        val confirmPasswordState = remember { ConfirmPasswordState(passwordState = passwordState) }
+        val websiteState = remember { WebsiteState() }
         Title(title = R.string.title)
         Spacer(modifier = Modifier.height(16.dp))
         CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.medium) {
@@ -96,7 +99,6 @@ fun SignUpContent(
         Email(emailState, onImeAction = { passwordFocusRequest.requestFocus() })
         Spacer(modifier = Modifier.height(16.dp))
 
-        val passwordState = remember { PasswordState() }
         Password(
             label = stringResource(id = R.string.password),
             passwordState = passwordState,
@@ -106,7 +108,7 @@ fun SignUpContent(
         )
 
         Spacer(modifier = Modifier.height(16.dp))
-        val confirmPasswordState = remember { ConfirmPasswordState(passwordState = passwordState) }
+
         Password(
             label = stringResource(id = R.string.confirm_password),
             passwordState = confirmPasswordState,
@@ -115,7 +117,6 @@ fun SignUpContent(
         )
 
         Spacer(modifier = Modifier.height(16.dp))
-        val websiteState = remember { WebsiteState() }
         Website(
             websiteState = websiteState,
             imeAction = ImeAction.Next,
