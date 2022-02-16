@@ -35,6 +35,7 @@
     <string name="show_password">Show password</string>
     <string name="hide_password">Hide password</string>
     <string name="hello">Hello, </string>
+    <string name="sign_in">Sign In</string>
     <string name="confirmation"> Your super-awesome portfolio has been successfully submitted!
     The details below will be public within your community!</string>
 
