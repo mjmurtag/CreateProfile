@@ -1,7 +1,7 @@
 # CreateProfile
 [![Android CI](https://github.com/mjmurtag/CreateProfile/actions/workflows/android.yml/badge.svg?branch=main)](https://github.com/mjmurtag/CreateProfile/actions/workflows/android.yml)
 
-> Note: `Spotless Kotlin` is enforced via Github Actions on this repo
+> Note: **Spotless Kotlin** is enforced via Github Actions on this repo
 >
 > Automatically resolve lint errors by running 
 >
