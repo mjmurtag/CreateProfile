@@ -18,6 +18,7 @@
 
 ## Showcase Skills
 * Spotless kotlin enforcement on PRs into main
+  * Enforces code consistency + prevents [bikeshedding](https://thedecisionlab.com/biases/bikeshedding/#:~:text=Bikeshedding%2C%20also%20known%20as%20Parkinson's,while%20leaving%20important%20matters%20unattended.) 
 * Github action `gradlew build` enforced on PRs into main
 * Utilization of modern Jetpack Android libraries yielded a UI that is
     * Responsive
