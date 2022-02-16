@@ -1,9 +1,20 @@
 # CreateProfile
+[![Android CI](https://github.com/mjmurtag/CreateProfile/actions/workflows/android.yml/badge.svg?branch=main)](https://github.com/mjmurtag/CreateProfile/actions/workflows/android.yml)
 
+> Note: `Spotless Kotlin` is enforced via Github Actions on this repo
+>
+> Automatically resolve linting erros by running 
+>
+> `./gradlew spotlessapply`
 
 Screenshots
 -----------
-
+<p float="left">
+<img src="./screenshots/profile_create_light.png" width="250" height="500" />
+<img src="/screenshots/profile_create_dark.png" width="250" height="500" />
+<img src="./screenshots/profile_create_filled_light" width="250" height="500" />
+<img src="~/screenshots/dark_signin" width="250" height="500" />
+</p>
 
 ## Features
 
