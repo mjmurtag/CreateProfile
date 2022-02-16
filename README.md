@@ -22,6 +22,7 @@
     * Responsive
     * Accessible 
     * Extensible 
+    * Maintainable
     * Testable via automation
 
 ## Deviations From Assigned Task
