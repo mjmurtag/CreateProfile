@@ -14,12 +14,15 @@
 * Conforms to Material Design UX
 * Primary colors have adequate contrast for low-vision users
 
+## Showcase Skills
+* Spotless kotlin enforcement on PRs into main
+* Github action `gradlew build` enforced on PRs into main
+
 ## Deviations From Assigned Task
 * Secret toggles used for password fields
 * Form validation present results in 'off spec' button color changes
 * Secondary Color Accents which help the app 'feel' native to the OS
-* Spotless kotlin enforcement on PRs into main
-* Github action `gradlew build` enforced on PRs into main
+* Used Material default font to maintain OS consistency 
 
 ### App scaffolding
 
